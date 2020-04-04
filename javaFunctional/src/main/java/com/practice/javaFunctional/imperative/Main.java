@@ -12,8 +12,12 @@ import java.util.stream.Collectors;
 public class Main {
 	public static void main(String[] args) {
 		
-		List<Person> people = Arrays.asList(new Person("John", MALE), new Person("Maria", FEMALE),
-				new Person("Aisha", FEMALE), new Person("Alex", MALE), new Person("Alice", FEMALE));
+		List<Person> people = Arrays.asList(
+				new Person("John", MALE), 
+				new Person("Maria", FEMALE),
+				new Person("Aisha", FEMALE), 
+				new Person("Alex", MALE), 
+				new Person("Alice", FEMALE));
 
 		System.out.println("// Imperative approach");
 		// Imperative approach
@@ -35,7 +39,10 @@ public class Main {
 
 		Predicate<Person> personPredicate = person -> FEMALE.equals(person.gender);
 
-		List<Person> females2 = people.stream().filter(personPredicate).collect(Collectors.toList());
+		List<Person> females2 = people.stream()
+								.filter(personPredicate)
+								.collect(Collectors.toList());
+		
 		females2.forEach(System.out::println);
 	}
 
